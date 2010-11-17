@@ -16,30 +16,15 @@
 
 package com.mattinsler.guiceymongo.data.generator.parser;
 
-import java.util.LinkedList;
-import java.util.List;
-
+import com.mattinsler.guiceymongo.data.generator.TypeRegistry;
+import com.mattinsler.guiceymongo.data.generator.option.Option;
+import com.mattinsler.guiceymongo.data.generator.property.*;
+import com.mattinsler.guiceymongo.data.generator.type.*;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.Tree;
 
-import com.mattinsler.guiceymongo.data.generator.TypeRegistry;
-import com.mattinsler.guiceymongo.data.generator.option.Option;
-import com.mattinsler.guiceymongo.data.generator.property.BlobProperty;
-import com.mattinsler.guiceymongo.data.generator.property.ListProperty;
-import com.mattinsler.guiceymongo.data.generator.property.MapProperty;
-import com.mattinsler.guiceymongo.data.generator.property.PrimitiveProperty;
-import com.mattinsler.guiceymongo.data.generator.property.Property;
-import com.mattinsler.guiceymongo.data.generator.property.SetProperty;
-import com.mattinsler.guiceymongo.data.generator.property.UserEnumProperty;
-import com.mattinsler.guiceymongo.data.generator.property.UserDataProperty;
-import com.mattinsler.guiceymongo.data.generator.type.BlobType;
-import com.mattinsler.guiceymongo.data.generator.type.ListType;
-import com.mattinsler.guiceymongo.data.generator.type.MapType;
-import com.mattinsler.guiceymongo.data.generator.type.PrimitiveType;
-import com.mattinsler.guiceymongo.data.generator.type.SetType;
-import com.mattinsler.guiceymongo.data.generator.type.Type;
-import com.mattinsler.guiceymongo.data.generator.type.UserEnumType;
-import com.mattinsler.guiceymongo.data.generator.type.UserDataType;
+import java.util.LinkedList;
+import java.util.List;
 
 public class TypeParser {
 	private static final String OPTION_IDENTITY = "identity";
@@ -163,6 +148,7 @@ public class TypeParser {
 				// TODO validation...?
 				type.setIdentityProperty(property);
 			}
+            property.addOption(option);
 		}
 	}
 	

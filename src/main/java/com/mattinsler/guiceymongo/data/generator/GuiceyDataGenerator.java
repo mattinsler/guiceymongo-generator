@@ -16,40 +16,37 @@
 
 package com.mattinsler.guiceymongo.data.generator;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.StringWriter;
-import java.util.Arrays;
-import java.util.List;
-
+import com.mattinsler.guiceymongo.data.generator.parser.GuiceyDataLexer;
+import com.mattinsler.guiceymongo.data.generator.parser.GuiceyDataParser;
+import com.mattinsler.guiceymongo.data.generator.parser.TypeParser;
+import com.mattinsler.guiceymongo.data.generator.type.UserType;
+import de.hunsicker.jalopy.Jalopy;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import joptsimple.OptionSpec;
-
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.tree.CommonTree;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import com.mattinsler.guiceymongo.data.generator.parser.GuiceyDataLexer;
-import com.mattinsler.guiceymongo.data.generator.parser.GuiceyDataParser;
-import com.mattinsler.guiceymongo.data.generator.parser.TypeParser;
-import com.mattinsler.guiceymongo.data.generator.type.UserType;
-
-import de.hunsicker.jalopy.Jalopy;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.StringWriter;
+import java.util.Arrays;
+import java.util.List;
 
 public class GuiceyDataGenerator {
-	private void parseDirectory(File directory, TypeParser parser) {
+	private void parseDirectory(File directory, TypeParser typeParser) {
 		for (File file : directory.listFiles()) {
 			if (file.isFile()) {
 				for (String extension : _fileExtensions) {
 					if (file.getName().endsWith(extension)) {
-						parseFile(file, parser);
+						parseFile(file, typeParser);
 					}
 				}
 			} else {
-				parseDirectory(file, parser);
+				parseDirectory(file, typeParser);
 			}
 		}
 	}
@@ -63,6 +60,9 @@ public class GuiceyDataGenerator {
 			System.err.println("File " + file.getPath() + " cannot be read.");
 			return;
 		}
+        if (file.isDirectory()) {
+            parseDirectory(file, typeParser);
+        }
 		
 		try {
 			GuiceyDataLexer lexer = new GuiceyDataLexer(new ANTLRFileStream(file.getAbsolutePath()));
@@ -120,12 +120,7 @@ public class GuiceyDataGenerator {
 		TypeGenerator generator = new TypeGenerator(registry);
 		
 		for (String pathName : pathNames) {
-			File path = new File(pathName);
-			if (path.isFile()) {
-				parseFile(path, parser);
-			} else {
-				parseDirectory(path, parser);
-			}
+			parseFile(new File(pathName), parser);
 		}
 		
 		File outputDirFile = new File(_sourceDirectory, _outputPackage.replace('.', '/'));
