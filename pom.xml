@@ -5,7 +5,7 @@
 
 	<groupId>com.mattinsler</groupId>
 	<artifactId>guiceymongo-generator</artifactId>
-	<version>0.3</version>
+	<version>0.2</version>
 	<packaging>jar</packaging>
 
 	<name>guiceymongo-generator</name>
