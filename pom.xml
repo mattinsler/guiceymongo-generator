@@ -12,8 +12,16 @@
 	<description>GuiceyMongo data object generator</description>
 	<url>http://www.mattinsler.com/</url>
 
+	<licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
 	<scm>
-		<url>http://github.com/mattinsler/guiceymongo-generator/</url>
+		<url>scm:git:git@github.com:mattinsler/guiceymongo-generator.git</url>
 		<connection>scm:git:git@github.com:mattinsler/guiceymongo-generator.git</connection>
 		<developerConnection>scm:git:git@github.com:mattinsler/guiceymongo-generator.git</developerConnection>
 	</scm>
@@ -21,6 +29,17 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>repo</id>
+			<url>http://github.com/mattinsler/maven-repo/raw/master/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot-repo</id>
+			<url>http://github.com/mattinsler/maven-repo/raw/master/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
@@ -63,7 +82,7 @@
 		<dependency>
 			<groupId>com.mattinsler</groupId>
 			<artifactId>guiceymongo</artifactId>
-			<version>0.2</version>
+			<version>0.2-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
