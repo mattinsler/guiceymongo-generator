@@ -5,7 +5,7 @@
 
 	<groupId>com.mattinsler</groupId>
 	<artifactId>guiceymongo-generator</artifactId>
-	<version>0.2</version>
+	<version>0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>guiceymongo-generator</name>
@@ -33,11 +33,11 @@
 	<distributionManagement>
 		<repository>
 			<id>repo</id>
-			<url>http://github.com/mattinsler/maven-repo/raw/master/releases</url>
+			<url>http://mattinsler.github.com/repository/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshot-repo</id>
-			<url>http://github.com/mattinsler/maven-repo/raw/master/snapshots</url>
+			<url>http://mattinsler.github.com/repository/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 
