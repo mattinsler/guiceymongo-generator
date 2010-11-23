@@ -1,6 +1,6 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/mattinsler/guiceymongo/data/generator/grammar/GuiceyData.g 2010-11-17 12:28:35
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/mattinsler/guiceymongo/data/generator/grammar/GuiceyData.g 2010-11-23 00:08:17
 
-package com.lowereast.guiceymongo.data.generator.parser;
+package com.mattinsler.guiceymongo.data.generator.grammar;
 
 
 import org.antlr.runtime.*;

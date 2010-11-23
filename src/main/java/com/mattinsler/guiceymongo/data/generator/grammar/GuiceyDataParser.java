@@ -1,6 +1,6 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/mattinsler/guiceymongo/data/generator/grammar/GuiceyData.g 2010-11-17 12:28:34
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/mattinsler/guiceymongo/data/generator/grammar/GuiceyData.g 2010-11-23 00:08:16
 
-package com.lowereast.guiceymongo.data.generator.parser;
+package com.mattinsler.guiceymongo.data.generator.grammar;
 
 
 import org.antlr.runtime.*;
@@ -380,7 +380,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: ID, DATA, javadoc, data_entry
+                    // elements: data_entry, ID, javadoc, DATA
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -461,7 +461,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: DATA, ID, javadoc
+                    // elements: ID, DATA, javadoc
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -608,7 +608,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: javadoc, ENUM, ID
+                    // elements: ID, ENUM, javadoc
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -729,7 +729,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: ID, javadoc, ENUM
+                    // elements: ENUM, ID, javadoc
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -906,7 +906,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: property, option, javadoc
+                    // elements: javadoc, property, option
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2465,7 +2465,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: type, ID
+                    // elements: ID, type
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
