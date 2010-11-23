@@ -131,5 +131,9 @@
 			<name>JBoss</name>
 			<url>http://repository.jboss.org/maven2</url>
 		</repository>
+		<repository>
+			<id>mattinsler-snapshots</id>
+			<url>http://mattinsler.github.com/repository/snapshots</url>
+		</repository>
 	</repositories>
 </project>
