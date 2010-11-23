@@ -22,10 +22,10 @@ tokens {
 }
 
 @header {
-package com.mattinsler.guiceymongo.data.generator.grammar;
+package com.mattinsler.guiceymongo.data.generator.parser;
 }
 @lexer::header {
-package com.mattinsler.guiceymongo.data.generator.grammar;
+package com.mattinsler.guiceymongo.data.generator.parser;
 }
 
 start

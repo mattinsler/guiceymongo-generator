@@ -1,9 +1,14 @@
-// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/lowereast/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g 2010-10-26 20:48:59
+// $ANTLR 3.2 Sep 23, 2009 14:05:07 com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g 2010-11-23 00:14:21
 
 package com.mattinsler.guiceymongo.data.generator.parser;
 
 
 import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 import org.antlr.runtime.tree.*;
 
@@ -75,7 +80,7 @@ public class GuiceyDataParser extends Parser {
     }
 
     public String[] getTokenNames() { return GuiceyDataParser.tokenNames; }
-    public String getGrammarFileName() { return "com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g"; }
+    public String getGrammarFileName() { return "com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g"; }
 
 
     public static class start_return extends ParserRuleReturnScope {
@@ -84,7 +89,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "start"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:31:1: start : ( entry )+ EOF ;
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:31:1: start : ( entry )+ EOF ;
     public final GuiceyDataParser.start_return start() throws RecognitionException {
         GuiceyDataParser.start_return retval = new GuiceyDataParser.start_return();
         retval.start = input.LT(1);
@@ -98,12 +103,12 @@ public class GuiceyDataParser extends Parser {
         Object EOF2_tree=null;
 
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:32:2: ( ( entry )+ EOF )
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:32:4: ( entry )+ EOF
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:32:2: ( ( entry )+ EOF )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:32:4: ( entry )+ EOF
             {
             root_0 = (Object)adaptor.nil();
 
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:32:4: ( entry )+
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:32:4: ( entry )+
             int cnt1=0;
             loop1:
             do {
@@ -121,7 +126,7 @@ public class GuiceyDataParser extends Parser {
 
                 switch (alt1) {
             	case 1 :
-            	    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:0:0: entry
+            	    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:0:0: entry
             	    {
             	    pushFollow(FOLLOW_entry_in_start121);
             	    entry1=entry();
@@ -177,7 +182,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "entry"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:35:1: entry : ( data | enumeration );
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:35:1: entry : ( data | enumeration );
     public final GuiceyDataParser.entry_return entry() throws RecognitionException {
         GuiceyDataParser.entry_return retval = new GuiceyDataParser.entry_return();
         retval.start = input.LT(1);
@@ -191,12 +196,12 @@ public class GuiceyDataParser extends Parser {
 
 
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:36:2: ( data | enumeration )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:36:2: ( data | enumeration )
             int alt2=2;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:36:4: data
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:36:4: data
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -210,7 +215,7 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:37:4: enumeration
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:37:4: enumeration
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -251,7 +256,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "data"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:40:1: data : ( ( javadoc )? DATA ID '{' ( data_entry )* '}' -> ^( DATA ID ( javadoc )? ( data_entry )* ) | ( javadoc )? DATA ID '{}' -> ^( DATA ID ( javadoc )? ) );
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:40:1: data : ( ( javadoc )? DATA ID '{' ( data_entry )* '}' -> ^( DATA ID ( javadoc )? ( data_entry )* ) | ( javadoc )? DATA ID '{}' -> ^( DATA ID ( javadoc )? ) );
     public final GuiceyDataParser.data_return data() throws RecognitionException {
         GuiceyDataParser.data_return retval = new GuiceyDataParser.data_return();
         retval.start = input.LT(1);
@@ -287,14 +292,14 @@ public class GuiceyDataParser extends Parser {
         RewriteRuleSubtreeStream stream_data_entry=new RewriteRuleSubtreeStream(adaptor,"rule data_entry");
         RewriteRuleSubtreeStream stream_javadoc=new RewriteRuleSubtreeStream(adaptor,"rule javadoc");
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:41:2: ( ( javadoc )? DATA ID '{' ( data_entry )* '}' -> ^( DATA ID ( javadoc )? ( data_entry )* ) | ( javadoc )? DATA ID '{}' -> ^( DATA ID ( javadoc )? ) )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:41:2: ( ( javadoc )? DATA ID '{' ( data_entry )* '}' -> ^( DATA ID ( javadoc )? ( data_entry )* ) | ( javadoc )? DATA ID '{}' -> ^( DATA ID ( javadoc )? ) )
             int alt6=2;
             alt6 = dfa6.predict(input);
             switch (alt6) {
                 case 1 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:41:4: ( javadoc )? DATA ID '{' ( data_entry )* '}'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:41:4: ( javadoc )? DATA ID '{' ( data_entry )* '}'
                     {
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:41:4: ( javadoc )?
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:41:4: ( javadoc )?
                     int alt3=2;
                     switch ( input.LA(1) ) {
                         case 30:
@@ -306,7 +311,7 @@ public class GuiceyDataParser extends Parser {
 
                     switch (alt3) {
                         case 1 :
-                            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:0:0: javadoc
+                            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:0:0: javadoc
                             {
                             pushFollow(FOLLOW_javadoc_in_data151);
                             javadoc5=javadoc();
@@ -329,7 +334,7 @@ public class GuiceyDataParser extends Parser {
                     char_literal8=(Token)match(input,26,FOLLOW_26_in_data158); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_26.add(char_literal8);
 
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:41:25: ( data_entry )*
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:41:25: ( data_entry )*
                     loop4:
                     do {
                         int alt4=2;
@@ -352,7 +357,7 @@ public class GuiceyDataParser extends Parser {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:0:0: data_entry
+                    	    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:0:0: data_entry
                     	    {
                     	    pushFollow(FOLLOW_data_entry_in_data160);
                     	    data_entry9=data_entry();
@@ -375,7 +380,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: ID, data_entry, DATA, javadoc
+                    // elements: DATA, data_entry, javadoc, ID
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -388,19 +393,19 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 41:41: -> ^( DATA ID ( javadoc )? ( data_entry )* )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:41:44: ^( DATA ID ( javadoc )? ( data_entry )* )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:41:44: ^( DATA ID ( javadoc )? ( data_entry )* )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_DATA.nextNode(), root_1);
 
                         adaptor.addChild(root_1, stream_ID.nextNode());
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:41:54: ( javadoc )?
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:41:54: ( javadoc )?
                         if ( stream_javadoc.hasNext() ) {
                             adaptor.addChild(root_1, stream_javadoc.nextTree());
 
                         }
                         stream_javadoc.reset();
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:41:63: ( data_entry )*
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:41:63: ( data_entry )*
                         while ( stream_data_entry.hasNext() ) {
                             adaptor.addChild(root_1, stream_data_entry.nextTree());
 
@@ -416,9 +421,9 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:42:4: ( javadoc )? DATA ID '{}'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:42:4: ( javadoc )? DATA ID '{}'
                     {
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:42:4: ( javadoc )?
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:42:4: ( javadoc )?
                     int alt5=2;
                     switch ( input.LA(1) ) {
                         case 30:
@@ -430,7 +435,7 @@ public class GuiceyDataParser extends Parser {
 
                     switch (alt5) {
                         case 1 :
-                            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:0:0: javadoc
+                            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:0:0: javadoc
                             {
                             pushFollow(FOLLOW_javadoc_in_data182);
                             javadoc11=javadoc();
@@ -456,7 +461,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: javadoc, ID, DATA
+                    // elements: ID, DATA, javadoc
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -469,13 +474,13 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 42:26: -> ^( DATA ID ( javadoc )? )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:42:29: ^( DATA ID ( javadoc )? )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:42:29: ^( DATA ID ( javadoc )? )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_DATA.nextNode(), root_1);
 
                         adaptor.addChild(root_1, stream_ID.nextNode());
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:42:39: ( javadoc )?
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:42:39: ( javadoc )?
                         if ( stream_javadoc.hasNext() ) {
                             adaptor.addChild(root_1, stream_javadoc.nextTree());
 
@@ -518,7 +523,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "enumeration"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:45:1: enumeration : ( ( javadoc )? ENUM ID '{}' -> ^( ENUM ID ( javadoc )? ) | ( javadoc )? ENUM ID '{' ( ID ',' )* ID '}' -> ^( ENUM ( ID )+ ( javadoc )? ) );
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:45:1: enumeration : ( ( javadoc )? ENUM ID '{}' -> ^( ENUM ID ( javadoc )? ) | ( javadoc )? ENUM ID '{' ( ID ',' )* ID '}' -> ^( ENUM ( ID )+ ( javadoc )? ) );
     public final GuiceyDataParser.enumeration_return enumeration() throws RecognitionException {
         GuiceyDataParser.enumeration_return retval = new GuiceyDataParser.enumeration_return();
         retval.start = input.LT(1);
@@ -558,14 +563,14 @@ public class GuiceyDataParser extends Parser {
         RewriteRuleTokenStream stream_29=new RewriteRuleTokenStream(adaptor,"token 29");
         RewriteRuleSubtreeStream stream_javadoc=new RewriteRuleSubtreeStream(adaptor,"rule javadoc");
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:46:2: ( ( javadoc )? ENUM ID '{}' -> ^( ENUM ID ( javadoc )? ) | ( javadoc )? ENUM ID '{' ( ID ',' )* ID '}' -> ^( ENUM ( ID )+ ( javadoc )? ) )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:46:2: ( ( javadoc )? ENUM ID '{}' -> ^( ENUM ID ( javadoc )? ) | ( javadoc )? ENUM ID '{' ( ID ',' )* ID '}' -> ^( ENUM ( ID )+ ( javadoc )? ) )
             int alt10=2;
             alt10 = dfa10.predict(input);
             switch (alt10) {
                 case 1 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:46:4: ( javadoc )? ENUM ID '{}'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:46:4: ( javadoc )? ENUM ID '{}'
                     {
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:46:4: ( javadoc )?
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:46:4: ( javadoc )?
                     int alt7=2;
                     switch ( input.LA(1) ) {
                         case 30:
@@ -577,7 +582,7 @@ public class GuiceyDataParser extends Parser {
 
                     switch (alt7) {
                         case 1 :
-                            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:0:0: javadoc
+                            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:0:0: javadoc
                             {
                             pushFollow(FOLLOW_javadoc_in_enumeration211);
                             javadoc15=javadoc();
@@ -616,13 +621,13 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 46:26: -> ^( ENUM ID ( javadoc )? )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:46:29: ^( ENUM ID ( javadoc )? )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:46:29: ^( ENUM ID ( javadoc )? )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_ENUM.nextNode(), root_1);
 
                         adaptor.addChild(root_1, stream_ID.nextNode());
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:46:39: ( javadoc )?
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:46:39: ( javadoc )?
                         if ( stream_javadoc.hasNext() ) {
                             adaptor.addChild(root_1, stream_javadoc.nextTree());
 
@@ -638,9 +643,9 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:47:4: ( javadoc )? ENUM ID '{' ( ID ',' )* ID '}'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:47:4: ( javadoc )? ENUM ID '{' ( ID ',' )* ID '}'
                     {
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:47:4: ( javadoc )?
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:47:4: ( javadoc )?
                     int alt8=2;
                     switch ( input.LA(1) ) {
                         case 30:
@@ -652,7 +657,7 @@ public class GuiceyDataParser extends Parser {
 
                     switch (alt8) {
                         case 1 :
-                            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:0:0: javadoc
+                            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:0:0: javadoc
                             {
                             pushFollow(FOLLOW_javadoc_in_enumeration234);
                             javadoc19=javadoc();
@@ -675,7 +680,7 @@ public class GuiceyDataParser extends Parser {
                     char_literal22=(Token)match(input,26,FOLLOW_26_in_enumeration241); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_26.add(char_literal22);
 
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:47:25: ( ID ',' )*
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:47:25: ( ID ',' )*
                     loop9:
                     do {
                         int alt9=2;
@@ -698,7 +703,7 @@ public class GuiceyDataParser extends Parser {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:47:26: ID ','
+                    	    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:47:26: ID ','
                     	    {
                     	    ID23=(Token)match(input,ID,FOLLOW_ID_in_enumeration244); if (state.failed) return retval; 
                     	    if ( state.backtracking==0 ) stream_ID.add(ID23);
@@ -724,7 +729,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: ID, javadoc, ENUM
+                    // elements: javadoc, ID, ENUM
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -737,7 +742,7 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 47:42: -> ^( ENUM ( ID )+ ( javadoc )? )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:47:45: ^( ENUM ( ID )+ ( javadoc )? )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:47:45: ^( ENUM ( ID )+ ( javadoc )? )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_ENUM.nextNode(), root_1);
@@ -750,7 +755,7 @@ public class GuiceyDataParser extends Parser {
 
                         }
                         stream_ID.reset();
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:47:56: ( javadoc )?
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:47:56: ( javadoc )?
                         if ( stream_javadoc.hasNext() ) {
                             adaptor.addChild(root_1, stream_javadoc.nextTree());
 
@@ -793,7 +798,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "data_entry"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:50:1: data_entry : ( entry | ( javadoc )? ( option )* property -> ^( property ( javadoc )? ( option )* ) );
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:50:1: data_entry : ( entry | ( javadoc )? ( option )* property -> ^( property ( javadoc )? ( option )* ) );
     public final GuiceyDataParser.data_entry_return data_entry() throws RecognitionException {
         GuiceyDataParser.data_entry_return retval = new GuiceyDataParser.data_entry_return();
         retval.start = input.LT(1);
@@ -813,12 +818,12 @@ public class GuiceyDataParser extends Parser {
         RewriteRuleSubtreeStream stream_property=new RewriteRuleSubtreeStream(adaptor,"rule property");
         RewriteRuleSubtreeStream stream_option=new RewriteRuleSubtreeStream(adaptor,"rule option");
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:51:2: ( entry | ( javadoc )? ( option )* property -> ^( property ( javadoc )? ( option )* ) )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:51:2: ( entry | ( javadoc )? ( option )* property -> ^( property ( javadoc )? ( option )* ) )
             int alt13=2;
             alt13 = dfa13.predict(input);
             switch (alt13) {
                 case 1 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:51:4: entry
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:51:4: entry
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -832,9 +837,9 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:52:4: ( javadoc )? ( option )* property
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:52:4: ( javadoc )? ( option )* property
                     {
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:52:4: ( javadoc )?
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:52:4: ( javadoc )?
                     int alt11=2;
                     switch ( input.LA(1) ) {
                         case 30:
@@ -846,7 +851,7 @@ public class GuiceyDataParser extends Parser {
 
                     switch (alt11) {
                         case 1 :
-                            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:0:0: javadoc
+                            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:0:0: javadoc
                             {
                             pushFollow(FOLLOW_javadoc_in_data_entry280);
                             javadoc28=javadoc();
@@ -860,7 +865,7 @@ public class GuiceyDataParser extends Parser {
 
                     }
 
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:52:13: ( option )*
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:52:13: ( option )*
                     loop12:
                     do {
                         int alt12=2;
@@ -875,7 +880,7 @@ public class GuiceyDataParser extends Parser {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:0:0: option
+                    	    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:0:0: option
                     	    {
                     	    pushFollow(FOLLOW_option_in_data_entry283);
                     	    option29=option();
@@ -901,7 +906,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: option, javadoc, property
+                    // elements: property, option, javadoc
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -914,18 +919,18 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 52:30: -> ^( property ( javadoc )? ( option )* )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:52:33: ^( property ( javadoc )? ( option )* )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:52:33: ^( property ( javadoc )? ( option )* )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_property.nextNode(), root_1);
 
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:52:44: ( javadoc )?
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:52:44: ( javadoc )?
                         if ( stream_javadoc.hasNext() ) {
                             adaptor.addChild(root_1, stream_javadoc.nextTree());
 
                         }
                         stream_javadoc.reset();
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:52:53: ( option )*
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:52:53: ( option )*
                         while ( stream_option.hasNext() ) {
                             adaptor.addChild(root_1, stream_option.nextTree());
 
@@ -968,7 +973,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "javadoc"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:55:1: javadoc : '/*' comment '*/' -> ^( COMMENT comment ) ;
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:55:1: javadoc : '/*' comment '*/' -> ^( COMMENT comment ) ;
     public final GuiceyDataParser.javadoc_return javadoc() throws RecognitionException {
         GuiceyDataParser.javadoc_return retval = new GuiceyDataParser.javadoc_return();
         retval.start = input.LT(1);
@@ -986,8 +991,8 @@ public class GuiceyDataParser extends Parser {
         RewriteRuleTokenStream stream_31=new RewriteRuleTokenStream(adaptor,"token 31");
         RewriteRuleSubtreeStream stream_comment=new RewriteRuleSubtreeStream(adaptor,"rule comment");
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:56:2: ( '/*' comment '*/' -> ^( COMMENT comment ) )
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:56:4: '/*' comment '*/'
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:56:2: ( '/*' comment '*/' -> ^( COMMENT comment ) )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:56:4: '/*' comment '*/'
             {
             string_literal31=(Token)match(input,30,FOLLOW_30_in_javadoc309); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_30.add(string_literal31);
@@ -1017,7 +1022,7 @@ public class GuiceyDataParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 56:22: -> ^( COMMENT comment )
             {
-                // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:56:25: ^( COMMENT comment )
+                // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:56:25: ^( COMMENT comment )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(COMMENT, "COMMENT"), root_1);
@@ -1058,7 +1063,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "comment"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:59:1: comment : (~ ( '*/' ) )* ;
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:59:1: comment : (~ ( '*/' ) )* ;
     public final GuiceyDataParser.comment_return comment() throws RecognitionException {
         GuiceyDataParser.comment_return retval = new GuiceyDataParser.comment_return();
         retval.start = input.LT(1);
@@ -1070,12 +1075,12 @@ public class GuiceyDataParser extends Parser {
         Object set34_tree=null;
 
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:60:2: ( (~ ( '*/' ) )* )
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:60:4: (~ ( '*/' ) )*
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:60:2: ( (~ ( '*/' ) )* )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:60:4: (~ ( '*/' ) )*
             {
             root_0 = (Object)adaptor.nil();
 
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:60:4: (~ ( '*/' ) )*
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:60:4: (~ ( '*/' ) )*
             loop14:
             do {
                 int alt14=2;
@@ -1128,7 +1133,7 @@ public class GuiceyDataParser extends Parser {
 
                 switch (alt14) {
             	case 1 :
-            	    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:0:0: ~ ( '*/' )
+            	    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:0:0: ~ ( '*/' )
             	    {
             	    set34=(Token)input.LT(1);
             	    if ( (input.LA(1)>=DATA && input.LA(1)<=30)||(input.LA(1)>=32 && input.LA(1)<=43) ) {
@@ -1180,7 +1185,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "option"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:63:1: option : ( '[' ID ']' -> ^( OPTION ID ) | '[' ID '(' value ')]' -> ^( OPTION ID value ) | '[' ID '(' ( pair ',' )* pair ')]' -> ^( OPTION ID ( pair )+ ) );
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:63:1: option : ( '[' ID ']' -> ^( OPTION ID ) | '[' ID '(' value ')]' -> ^( OPTION ID value ) | '[' ID '(' ( pair ',' )* pair ')]' -> ^( OPTION ID ( pair )+ ) );
     public final GuiceyDataParser.option_return option() throws RecognitionException {
         GuiceyDataParser.option_return retval = new GuiceyDataParser.option_return();
         retval.start = input.LT(1);
@@ -1227,7 +1232,7 @@ public class GuiceyDataParser extends Parser {
         RewriteRuleSubtreeStream stream_pair=new RewriteRuleSubtreeStream(adaptor,"rule pair");
         RewriteRuleSubtreeStream stream_value=new RewriteRuleSubtreeStream(adaptor,"rule value");
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:64:2: ( '[' ID ']' -> ^( OPTION ID ) | '[' ID '(' value ')]' -> ^( OPTION ID value ) | '[' ID '(' ( pair ',' )* pair ')]' -> ^( OPTION ID ( pair )+ ) )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:64:2: ( '[' ID ']' -> ^( OPTION ID ) | '[' ID '(' value ')]' -> ^( OPTION ID value ) | '[' ID '(' ( pair ',' )* pair ')]' -> ^( OPTION ID ( pair )+ ) )
             int alt16=3;
             switch ( input.LA(1) ) {
             case 32:
@@ -1296,7 +1301,7 @@ public class GuiceyDataParser extends Parser {
 
             switch (alt16) {
                 case 1 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:64:4: '[' ID ']'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:64:4: '[' ID ']'
                     {
                     char_literal35=(Token)match(input,32,FOLLOW_32_in_option349); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_32.add(char_literal35);
@@ -1323,7 +1328,7 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 64:15: -> ^( OPTION ID )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:64:18: ^( OPTION ID )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:64:18: ^( OPTION ID )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(OPTION, "OPTION"), root_1);
@@ -1339,7 +1344,7 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:65:4: '[' ID '(' value ')]'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:65:4: '[' ID '(' value ')]'
                     {
                     char_literal38=(Token)match(input,32,FOLLOW_32_in_option366); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_32.add(char_literal38);
@@ -1375,7 +1380,7 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 65:26: -> ^( OPTION ID value )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:65:29: ^( OPTION ID value )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:65:29: ^( OPTION ID value )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(OPTION, "OPTION"), root_1);
@@ -1392,7 +1397,7 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:67:4: '[' ID '(' ( pair ',' )* pair ')]'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:67:4: '[' ID '(' ( pair ',' )* pair ')]'
                     {
                     char_literal43=(Token)match(input,32,FOLLOW_32_in_option390); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_32.add(char_literal43);
@@ -1403,7 +1408,7 @@ public class GuiceyDataParser extends Parser {
                     char_literal45=(Token)match(input,34,FOLLOW_34_in_option394); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_34.add(char_literal45);
 
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:67:15: ( pair ',' )*
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:67:15: ( pair ',' )*
                     loop15:
                     do {
                         int alt15=2;
@@ -1444,7 +1449,7 @@ public class GuiceyDataParser extends Parser {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:67:16: pair ','
+                    	    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:67:16: pair ','
                     	    {
                     	    pushFollow(FOLLOW_pair_in_option397);
                     	    pair46=pair();
@@ -1489,7 +1494,7 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 67:37: -> ^( OPTION ID ( pair )+ )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:67:40: ^( OPTION ID ( pair )+ )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:67:40: ^( OPTION ID ( pair )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(OPTION, "OPTION"), root_1);
@@ -1540,7 +1545,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "pair"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:70:1: pair : key '=' value -> ^( PAIR key value ) ;
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:70:1: pair : key '=' value -> ^( PAIR key value ) ;
     public final GuiceyDataParser.pair_return pair() throws RecognitionException {
         GuiceyDataParser.pair_return retval = new GuiceyDataParser.pair_return();
         retval.start = input.LT(1);
@@ -1558,8 +1563,8 @@ public class GuiceyDataParser extends Parser {
         RewriteRuleSubtreeStream stream_value=new RewriteRuleSubtreeStream(adaptor,"rule value");
         RewriteRuleSubtreeStream stream_key=new RewriteRuleSubtreeStream(adaptor,"rule key");
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:71:2: ( key '=' value -> ^( PAIR key value ) )
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:71:4: key '=' value
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:71:2: ( key '=' value -> ^( PAIR key value ) )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:71:4: key '=' value
             {
             pushFollow(FOLLOW_key_in_pair428);
             key50=key();
@@ -1579,7 +1584,7 @@ public class GuiceyDataParser extends Parser {
 
 
             // AST REWRITE
-            // elements: value, key
+            // elements: key, value
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1592,7 +1597,7 @@ public class GuiceyDataParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 71:18: -> ^( PAIR key value )
             {
-                // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:71:21: ^( PAIR key value )
+                // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:71:21: ^( PAIR key value )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(PAIR, "PAIR"), root_1);
@@ -1634,7 +1639,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "key"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:74:1: key : ID ;
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:74:1: key : ID ;
     public final GuiceyDataParser.key_return key() throws RecognitionException {
         GuiceyDataParser.key_return retval = new GuiceyDataParser.key_return();
         retval.start = input.LT(1);
@@ -1646,8 +1651,8 @@ public class GuiceyDataParser extends Parser {
         Object ID53_tree=null;
 
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:75:2: ( ID )
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:75:4: ID
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:75:2: ( ID )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:75:4: ID
             {
             root_0 = (Object)adaptor.nil();
 
@@ -1685,7 +1690,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "value"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:77:1: value : ( INT | FLOAT | STRING );
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:77:1: value : ( INT | FLOAT | STRING );
     public final GuiceyDataParser.value_return value() throws RecognitionException {
         GuiceyDataParser.value_return retval = new GuiceyDataParser.value_return();
         retval.start = input.LT(1);
@@ -1697,8 +1702,8 @@ public class GuiceyDataParser extends Parser {
         Object set54_tree=null;
 
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:78:2: ( INT | FLOAT | STRING )
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:78:2: ( INT | FLOAT | STRING )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:
             {
             root_0 = (Object)adaptor.nil();
 
@@ -1743,7 +1748,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "property"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:83:1: property : ( type 'data;' -> ^( PROPERTY 'data' type ) | type ID ';' -> ^( PROPERTY ID type ) );
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:83:1: property : ( type 'data;' -> ^( PROPERTY 'data' type ) | type ID ';' -> ^( PROPERTY ID type ) );
     public final GuiceyDataParser.property_return property() throws RecognitionException {
         GuiceyDataParser.property_return retval = new GuiceyDataParser.property_return();
         retval.start = input.LT(1);
@@ -1766,7 +1771,7 @@ public class GuiceyDataParser extends Parser {
         RewriteRuleTokenStream stream_38=new RewriteRuleTokenStream(adaptor,"token 38");
         RewriteRuleSubtreeStream stream_type=new RewriteRuleSubtreeStream(adaptor,"rule type");
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:91:2: ( type 'data;' -> ^( PROPERTY 'data' type ) | type ID ';' -> ^( PROPERTY ID type ) )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:91:2: ( type 'data;' -> ^( PROPERTY 'data' type ) | type ID ';' -> ^( PROPERTY ID type ) )
             int alt17=2;
             switch ( input.LA(1) ) {
             case 39:
@@ -1874,7 +1879,7 @@ public class GuiceyDataParser extends Parser {
 
             switch (alt17) {
                 case 1 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:91:4: type 'data;'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:91:4: type 'data;'
                     {
                     pushFollow(FOLLOW_type_in_property488);
                     type55=type();
@@ -1901,7 +1906,7 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 91:17: -> ^( PROPERTY 'data' type )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:91:20: ^( PROPERTY 'data' type )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:91:20: ^( PROPERTY 'data' type )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(PROPERTY, "PROPERTY"), root_1);
@@ -1918,7 +1923,7 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:92:4: type ID ';'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:92:4: type ID ';'
                     {
                     pushFollow(FOLLOW_type_in_property505);
                     type57=type();
@@ -1948,7 +1953,7 @@ public class GuiceyDataParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 92:16: -> ^( PROPERTY ID type )
                     {
-                        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:92:19: ^( PROPERTY ID type )
+                        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:92:19: ^( PROPERTY ID type )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(PROPERTY, "PROPERTY"), root_1);
@@ -1992,7 +1997,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "key_type"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:95:1: key_type : type ;
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:95:1: key_type : type ;
     public final GuiceyDataParser.key_type_return key_type() throws RecognitionException {
         GuiceyDataParser.key_type_return retval = new GuiceyDataParser.key_type_return();
         retval.start = input.LT(1);
@@ -2004,8 +2009,8 @@ public class GuiceyDataParser extends Parser {
 
 
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:96:2: ( type )
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:96:4: type
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:96:2: ( type )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:96:4: type
             {
             root_0 = (Object)adaptor.nil();
 
@@ -2044,7 +2049,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "value_type"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:99:1: value_type : type ;
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:99:1: value_type : type ;
     public final GuiceyDataParser.value_type_return value_type() throws RecognitionException {
         GuiceyDataParser.value_type_return retval = new GuiceyDataParser.value_type_return();
         retval.start = input.LT(1);
@@ -2056,8 +2061,8 @@ public class GuiceyDataParser extends Parser {
 
 
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:100:2: ( type )
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:100:4: type
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:100:2: ( type )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:100:4: type
             {
             root_0 = (Object)adaptor.nil();
 
@@ -2096,7 +2101,7 @@ public class GuiceyDataParser extends Parser {
     };
 
     // $ANTLR start "type"
-    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:103:1: type : ( 'map<' type ',' type '>' -> TYPE_MAP ( type )+ | 'set<' type '>' -> TYPE_SET type | 'list<' type '>' -> TYPE_LIST type | TYPE -> TYPE_PRIMITIVE TYPE | ID -> TYPE_PRIMITIVE ID | ID '<' type ( ',' type )* '>' -> PARAMETERIZED_TYPE ID ( type )+ );
+    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:103:1: type : ( 'map<' type ',' type '>' -> TYPE_MAP ( type )+ | 'set<' type '>' -> TYPE_SET type | 'list<' type '>' -> TYPE_LIST type | TYPE -> TYPE_PRIMITIVE TYPE | ID -> TYPE_PRIMITIVE ID | ID '<' type ( ',' type )* '>' -> PARAMETERIZED_TYPE ID ( type )+ );
     public final GuiceyDataParser.type_return type() throws RecognitionException {
         GuiceyDataParser.type_return retval = new GuiceyDataParser.type_return();
         retval.start = input.LT(1);
@@ -2152,7 +2157,7 @@ public class GuiceyDataParser extends Parser {
         RewriteRuleTokenStream stream_29=new RewriteRuleTokenStream(adaptor,"token 29");
         RewriteRuleSubtreeStream stream_type=new RewriteRuleSubtreeStream(adaptor,"rule type");
         try {
-            // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:104:2: ( 'map<' type ',' type '>' -> TYPE_MAP ( type )+ | 'set<' type '>' -> TYPE_SET type | 'list<' type '>' -> TYPE_LIST type | TYPE -> TYPE_PRIMITIVE TYPE | ID -> TYPE_PRIMITIVE ID | ID '<' type ( ',' type )* '>' -> PARAMETERIZED_TYPE ID ( type )+ )
+            // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:104:2: ( 'map<' type ',' type '>' -> TYPE_MAP ( type )+ | 'set<' type '>' -> TYPE_SET type | 'list<' type '>' -> TYPE_LIST type | TYPE -> TYPE_PRIMITIVE TYPE | ID -> TYPE_PRIMITIVE ID | ID '<' type ( ',' type )* '>' -> PARAMETERIZED_TYPE ID ( type )+ )
             int alt19=6;
             switch ( input.LA(1) ) {
             case 39:
@@ -2212,7 +2217,7 @@ public class GuiceyDataParser extends Parser {
 
             switch (alt19) {
                 case 1 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:104:4: 'map<' type ',' type '>'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:104:4: 'map<' type ',' type '>'
                     {
                     string_literal62=(Token)match(input,39,FOLLOW_39_in_type552); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_39.add(string_literal62);
@@ -2267,7 +2272,7 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:105:4: 'set<' type '>'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:105:4: 'set<' type '>'
                     {
                     string_literal67=(Token)match(input,41,FOLLOW_41_in_type572); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_41.add(string_literal67);
@@ -2306,7 +2311,7 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:106:4: 'list<' type '>'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:106:4: 'list<' type '>'
                     {
                     string_literal70=(Token)match(input,42,FOLLOW_42_in_type587); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_42.add(string_literal70);
@@ -2345,7 +2350,7 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:107:4: TYPE
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:107:4: TYPE
                     {
                     TYPE73=(Token)match(input,TYPE,FOLLOW_TYPE_in_type602); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TYPE.add(TYPE73);
@@ -2375,7 +2380,7 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:108:4: ID
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:108:4: ID
                     {
                     ID74=(Token)match(input,ID,FOLLOW_ID_in_type613); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ID.add(ID74);
@@ -2405,7 +2410,7 @@ public class GuiceyDataParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:109:4: ID '<' type ( ',' type )* '>'
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:109:4: ID '<' type ( ',' type )* '>'
                     {
                     ID75=(Token)match(input,ID,FOLLOW_ID_in_type624); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_ID.add(ID75);
@@ -2419,7 +2424,7 @@ public class GuiceyDataParser extends Parser {
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_type.add(type77.getTree());
-                    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:109:16: ( ',' type )*
+                    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:109:16: ( ',' type )*
                     loop18:
                     do {
                         int alt18=2;
@@ -2434,7 +2439,7 @@ public class GuiceyDataParser extends Parser {
 
                         switch (alt18) {
                     	case 1 :
-                    	    // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:109:17: ',' type
+                    	    // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:109:17: ',' type
                     	    {
                     	    char_literal78=(Token)match(input,29,FOLLOW_29_in_type631); if (state.failed) return retval; 
                     	    if ( state.backtracking==0 ) stream_29.add(char_literal78);
@@ -2460,7 +2465,7 @@ public class GuiceyDataParser extends Parser {
 
 
                     // AST REWRITE
-                    // elements: type, ID
+                    // elements: ID, type
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2513,8 +2518,8 @@ public class GuiceyDataParser extends Parser {
 
     // $ANTLR start synpred21_GuiceyData
     public final void synpred21_GuiceyData_fragment() throws RecognitionException {   
-        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:91:4: ( type 'data;' )
-        // com/mattinsler/guiceymongo/data/com.mattinsler.guiceymongo.data.generator/parser/GuiceyData.g:91:4: type 'data;'
+        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:91:4: ( type 'data;' )
+        // com/mattinsler/guiceymongo/data/generator/parser/GuiceyData.g:91:4: type 'data;'
         {
         pushFollow(FOLLOW_type_in_synpred21_GuiceyData488);
         type();
