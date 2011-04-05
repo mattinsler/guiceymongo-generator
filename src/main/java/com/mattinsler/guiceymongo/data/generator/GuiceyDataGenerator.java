@@ -60,9 +60,10 @@ public class GuiceyDataGenerator {
 			System.err.println("File " + file.getPath() + " cannot be read.");
 			return;
 		}
-        if (file.isDirectory()) {
-            parseDirectory(file, typeParser);
-        }
+		if (file.isDirectory()) {
+			parseDirectory(file, typeParser);
+			return; //Do not continue to parse as file
+		}
 		
 		try {
 			GuiceyDataLexer lexer = new GuiceyDataLexer(new ANTLRFileStream(file.getAbsolutePath()));
